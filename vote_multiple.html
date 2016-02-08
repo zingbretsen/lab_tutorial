@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>SDM Lab</title>
+	<link rel="stylesheet" href="http://socialdecisionmakinglaboratory.com/scripts/webMT_new.css">
+	<link rel="stylesheet" href="http://socialdecisionmakinglaboratory.com/scripts/bootstrap_buttons.css">
+	<link rel="stylesheet" href="./local.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link rel="icon" type="image/png" href="http://socialdecisionmakinglaboratory.com/scripts/brain.png">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://socialdecisionmakinglaboratory.com/scripts/pre-loader.js"></script>
+	<script type="text/javascript" src="http://socialdecisionmakinglaboratory.com/scripts/funcs.js"></script>
+	<script type="text/javascript" src="http://socialdecisionmakinglaboratory.com/scripts/purl.js"></script>
+	<script type="text/javascript" src="http://socialdecisionmakinglaboratory.com/scripts/Task.js"></script>
+	<script type="text/javascript" src="http://socialdecisionmakinglaboratory.com/scripts/demo.js"></script>
+	<script type="text/javascript" src="http://socialdecisionmakinglaboratory.com/scripts/vote_multiple.js"></script>
+	<script type="text/javascript" src="vote_multiple.js"></script>
+</head>
+<body>
+<div id="progressbar" style="display:none"></div>
+<div id="screener"></div>
+<div id="alert" style ="display:none; cursor:pointer; text-align:center; width:400px; margin-left:auto; margin-right:auto"><h3 id="alertMsg"></h3><p>Click here to continue.</p></div>
+
+<div class = "trial" style="display:none">
+	<h2 id = "prompt"></h2>
+	<table id="imageTable">
+		<tr>
+			<td id="image"></td>
+		</tr>
+		<tr>
+			<td id="image2"></td>
+		</tr>
+	</table>		
+	<div id="answerDiv">
+		<table>
+			<tr id="answers" style="display:none; cursor:pointer">
+			</tr>
+		</table>
+	</div>
+</div>
+
+	<div id="exptArea">	
+		<div class = "choices"></div>
+		<div id="stim"></div>
+		<div id="stim2"></div>
+		<div id="feedback"></div>
+		<div id="startButton" style="display:none"><p id="startTrial" onclick=""></p></div>
+	</div>
+
+<div class = "survey" style = "display:none">
+	<div class = "surveyInstructionsScreen"><h2 id = "surveyInstructions"></h2>
+		<input type = "button" onclick = "startSurvey()" value = "Proceed"></input>
+	</div>
+	<div class = "surveyScreen">
+		<h2 id = "surveyPrompt"></h2>
+		<ul id="surveyAnswers">
+		</ul>
+		<table><tr><td id="surveyAnswers"></td></tr></table>
+	</div>
+</div>
+
+<div class = "demographics" style = "display:none">
+</div>
+
+	<div class = "break" style = "display:none">
+		<div id="break_text">
+		<p>You have completed this block of trials</p>
+		<p>Press the button below to continue</p>
+		</div>
+		<input type = "button" id="breakButton" onclick="" value = "Continue"></input>
+	</div>
+
+<div class = "thanks" style = "display:none">
+	<p>You're all done!</p>
+	<p>Press F11 (PC) or cmd + shift + F (Mac) to leave Full Screen mode.</p>
+	<p>Please copy the following code and paste it into the Qualtrics window:</p>
+	<h3 id="participantCode"></h3>
+</div>
+
+</body>
+</html>
