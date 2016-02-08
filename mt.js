@@ -3,11 +3,11 @@ var subjID, mTurkID;
 
 //Try to grab mTurkID from URL
 try {
-	mTurkID = $.url().param('mTurkID');
+  mTurkID = $.url().param('mTurkID');
 } catch (err) { }
 //If there is no mTurkID in the URL, leave it blank
 if (mTurkID == undefined) {
-	mTurkID = '';
+  mTurkID = '';
 }
 
 //suppress anything from being logged to console
@@ -127,25 +127,11 @@ mtTask.nextTask= function (){
 }
 
 // These are some pre-programmed demographic questions that you can include if you want
-myDemo.info['age']['include']      = true; //CHANGEME (IF YOU WANT)
+// This one checks to see if the participant used a mouse or a trackpad
 myDemo.info['mouse']['include']    = true; //CHANGEME (IF YOU WANT)
-myDemo.info['gender']['include']   = true; //CHANGEME (IF YOU WANT)
-myDemo.info['language']['include'] = true; //CHANGEME (IF YOU WANT)
-myDemo.info['english']['include']  = true; //CHANGEME (IF YOU WANT)
-myDemo.info['hispanic']['include'] = true; //CHANGEME (IF YOU WANT)
-myDemo.info['race']['include']     = true; //CHANGEME (IF YOU WANT)
+myDemo.name = 'mouse_check';
 
-// Or you can add questions on the fly
-// add = function (id, ques, type, choices/options, required)
-myDemo.add('handedness', 'Which hand do you write with?', 'radio', [' Left', ' Right', ' Both'], true);
-myDemo.add('icecream', 'Which is your favorite ice cream?', 'dropdown', ['Vanilla', 'Chocolate', 'Other'], true);
-myDemo.add('shortanswer', 'Write a word', 'text', [], true);
-myDemo.add('longanswer', 'Write a sentence', 'textarea', [], true);
-myDemo.add('feel', 'How do you feel?', 'slider', {min: 0, max: 10, step: 1, labels: ['Awful', 'Meh', 'Faaaantastic']}, true);
-
-myDemo.name = 'demo';
-
-preloadImages_new([], function () {});
+preloadImages_new(mtTask.stimArray, function () {});
 
 
 // Change the main splash screen instructions here:
@@ -169,21 +155,21 @@ var consentBold = [
 
 // You can change how they display by altering the "type" below (e.g. h1/h2/h3/p, etc.)
 // Writes text to splash page and adds a button to start the first task
-postInstructions([
-  wrap([consentTitle,'h3']),
-  wrap([consentText,'p','.consent']), 
-  wrap([consentBold,'h3','.instructions'])],
-  myDemo,
-  false); //hides instructions until preloaded
+postInstructions(
+  [
+    wrap([consentTitle,'h3']),
+    wrap([consentText,'p','.consent']), //You can tag things with a particular class
+    wrap([consentBold,'h3','.instructions'])
+  ],
+  mtTask, //This is the task to run when they click the Agree button
+  false); //hides instructions until preloaded if true
 
 
-  window.onload = function () {
+window.onload = function () {
 
     donePreloading();
     $(function () {
       $('#progressbar').progressbar({value:0, max:60})
       .height('5px');
     });
-
-
   };
