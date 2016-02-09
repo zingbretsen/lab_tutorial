@@ -21,7 +21,7 @@ subjID = getSubjID(7);
 // Change at your discretion
 study = "demo/lab_survey"; //CHANGEME
 
-var software = ['Bash', 'Other shells (e.g. ZSH)', 'tmux', 'Sophie', 'Python', 'mTurk/Qualtrics integration', 'mTurk scripting', 'Vim', 'This framework'];
+var software = ['Bash', 'Other shells (e.g. ZSH)', 'tmux', 'Sophie', 'Python', 'mTurk/Qualtrics integration', 'mTurk scripting', 'Browser developer console', 'Vim', 'This framework'];
 // Make your new tasks
 var softwareExperience = new voteMultipleObj(software);
 var softwareDesire = new voteMultipleObj(software);
