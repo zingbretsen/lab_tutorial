@@ -57,8 +57,8 @@ softwareDesire.nextTask= function (){
 
 // These are some pre-programmed demographic questions that you can include if you want
 // This one checks to see if the participant used a mouse or a trackpad
-myDemo.add('name', 'What is your name?', 'text', '', true);
-myDemo.name = 'name';
+myDemo.add('username', 'What is your name?', 'text', '', true);
+myDemo.name = 'username';
 myDemo.nextTask = function () {
   var $body = $('body');
   $body.empty().css('text-align', 'center');
