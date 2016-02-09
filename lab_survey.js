@@ -61,7 +61,7 @@ myDemo.add('name', 'What is your name?', 'text', '', true);
 myDemo.name = 'name';
 myDemo.nextTask = function () {
   var $body = $('body');
-  $body.empty();
+  $body.empty().css('text-align', 'center');
   $('<h1>').text('All done!').appendTo($body);
   $('<p>').text('See you at lab meeting tonight! Don\'t forget to bring your computer!').appendTo($body);
   
