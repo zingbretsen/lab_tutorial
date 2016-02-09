@@ -25,12 +25,12 @@ var myDemo = new demo();
 
 
 // Enter your task instructions
-voteTask.instructions       = 'In this task you will be categorizing faces as either having positive or negative expressions.<br><br>For each trial, there will be two labels at the top. When you click the start button at the bottom a picture of a face will appear, and you will have to categorize the expression as positive or negative by clicking one of the labels at the top.<br><br>The trials are timed, and it is important that you try to respond as quickly as you can while still being as accurate as possible.<br><br><br><br>Please enter FULLSCREEN mode in your browser by clicking on View > Enter Full Screen<br>or by pressing ctrl + shift + F (on most PCs) or cmd + shift + F (on most Macs)';
+voteTask.instructions       = 'Find your Point of Subjective Equality (PSE). Use the slider bar to select the face that looks like it has an equal mix of stereotypically black and stereotypically white features.';
 
 // These are our faces
-var targets = [ ['B2W2_0.jpg', 'B2W2_1.jpg', 'B2W2_10.jpg', 'B2W2_2.jpg', 'B2W2_3.jpg', 'B2W2_4.jpg', 'B2W2_5.jpg', 'B2W2_6.jpg', 'B2W2_7.jpg', 'B2W2_8.jpg', 'B2W2_9.jpg'] ];
+var targets = [ ['B2W2_0.jpg', 'B2W2_1.jpg', 'B2W2_2.jpg', 'B2W2_3.jpg', 'B2W2_4.jpg', 'B2W2_5.jpg', 'B2W2_6.jpg', 'B2W2_7.jpg', 'B2W2_8.jpg', 'B2W2_9.jpg', 'B2W2_10.jpg'] ];
 
-voteTask.prompt = "How great is this photo?";
+voteTask.prompt = "At what point does this face look exactly between White and Black?";
 voteTask.picHeight = "300px";
 voteTask.trialScale = ["Could be better","","","Middling","","","Exceptional"];
 voteTask.picArray = targets;
@@ -49,20 +49,17 @@ preloadImages_new(voteTask.picArray, function () {});
 
 
 // Change the main splash screen instructions here:
-var consentTitle = ['Study on Emotional Expressions']; //CHANGEME
+var consentTitle = ['PSE slider']; //CHANGEME
 
 var consentText = [
   // each separate block of text will be separated by newlines
   // add or remove blocks as desired
   'Welcome to the experiment! Thank you for your participation.',
-  'You will be asked to respond to some questions about peoples\' facial expressions.', //CHANGEME
-  'This part of the task will take approximately 20 minutes to complete.'
 ]; 
 
 var consentBold = [ 
   // each separate block of text will be separated by newlines
   // add or remove blocks as desired
-  'Please use an external mouse if you have one available, and not a trackpad/trackball.',
   'Please DO NOT use your browser\'s back or reload buttons!',
   'You will receive the code for Qualtrics  at the end of the task.'
 ];
