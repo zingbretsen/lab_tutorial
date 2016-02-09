@@ -17,12 +17,52 @@
 	<p>
 	<pre>git clone https://github.com/zingbretsen/lab_tutorial.git</pre>
 	</p>
-	<h3>webMT/Lab Framework</h3>
+	<h3 class="header" >webMT/Lab Framework</h3>
 	<p> <a target="_blank" href="vote.html">Simple ratings Example</a> </p>
 	<p> <a target="_blank" href="vote_multiple.html">Slightly more complicated ratings Example</a> </p>
 	<p> <a target="_blank" href="mt.html">Mousetracking Example</a> </p>
 	<p> <a target="_blank" href="revcorr.html">Reverse correlation</a> </p>
 	<p> <a target="_blank" href="morph.html">Mighty Morphin' Slider Bar</a> </p>
 	<p> <a target="_blank" href="demographics.html">Demographics Example</a> </p>
+	<h3 class="header" >Bash Cheat Sheet</h3>
+	<p> Here are a couple of fairly dense commands that we will unpack during the meeting: </p>
+	<hr>
+	<p> Find all jpgs in all subdirectories and copy them to the current directory: </p>
+	<p> <pre> find ./ -name "*jpg" -exec cp {} ./ \; </pre> </p>
+	<hr>
+	<p></p>
+	<p> <pre>
+	cd survey_data
+	for label in demo ratings
+	do
+		cat ${label}/* | sort > ${label}.csv
+	done
+	join -t ',' demo.csv ratings.csv | sort -r | uniq > all_data.csv
+	</pre> </p>
+	<hr>
+	<p>And here is a handy bash cheat sheet for beginners in bash</p>
+	<a href="https://www.hashdoc.com/documents/20601/linux-bash-shell-cheat-sheet" target="_blank">
+	<img src="https://cdn.hashdoc.com/docs/d8c0fa45a6d7cb222e1283ab3ca8432e/images/728x/linux-bash-shell-cheat-sheet-2.png" />
+	</a>
+	<h3 class="header" >Developer Console</h3>
+	<p>In Chrome and Firefox, you can right click on any element of a webpage and "Inspect [element]".</p>
+	<p>This should open your developer console, in which you can modify elements on the page.</p>
+	<p>You can also run Javascript commands to poke around with.</p>
+	<p>
+	<pre>
+	$('body').css('background-color', 'rgba(0,100,100,.1)')
+		.append('New Text');
+	</pre>
+	</p>
+	<p>
+	<pre>
+	$('body').on('click', function () { $('.header').toggle(); });
+	</pre>
+	</p>
+	<p>
+	<pre>
+	$('body').unbind('click');
+	</pre>
+	</p>
 </body>
 </html>
