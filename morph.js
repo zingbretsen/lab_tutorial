@@ -17,7 +17,7 @@ window.console.log = function () {}
 subjID = getSubjID(7);
 
 // Change at your discretion
-study = "demo/vote"; //CHANGEME
+study = "demo/morph"; //CHANGEME
 
 // Make your new tasks
 var voteTask = new scrollbarObj();
